@@ -1,0 +1,18 @@
+height=c(4.3,4.1,4.1,4.1,4,4.7,4.6,4.6,4.5,4.4,4.1,4.1,3.9,4,3.9,3.8,4,3.9,3.5,3.8,4,4,3.4,3.9)
+width=c(9,9,9.1,9.3,8.9,10.6,9.5,9.6,9.5,9,9.4,9,8.5,8.8,8.8,8.2,8.4,8.3,8,8.5,8.5,8.4,7.7,7.6)
+lengthh=c(11.6,11.7,11.7,11.9,12,13.5,13.1,12.7,12.5,12.4,12,11.7,11.3,11.3,11.1,10.7,10.7,10.4,10.1,10.,10.3,10.6,9.3,9.5)
+data=data.frame(height,width,length)
+pca =prcomp(datt[,c(3,2,1)], center = TRUE,scale. = TRUE)
+pca
+summary(pca)
+lambda1=2.7974
+lambda2=0.1456
+lambda3=0.0550
+Var1=(lambda1)/(lambda1+lambda2+lambda3)*100
+Var2=(lambda2)/(lambda1+lambda2+lambda3)*100
+Var3=(lambda3)/(lambda1+lambda2+lambda3)*100
+y1="y1=0.9496x1+0.9685x2+0.9786x3"
+y2="y2=0.3099x1-0.2047x2-0.0983x3"
+y3="y3=0.0354x1+0.1467x2-0.1795x3"
+library(ggfortify)
+autoplot(pca)
